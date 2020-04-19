@@ -30,6 +30,11 @@ pipeline {
                     steps {
 						echo "Task1 on Master"
 					}
+					post{ 
+						always	{ 
+									jiraSendBuildInfo branch: '', site: 'learningthoughts.atlassian.net' 
+								}
+						}
                 }
             }
         }
